@@ -5,8 +5,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -33,13 +31,13 @@
         <stringProp name="HTTPSampler.implementation"></stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-AS">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-AS" enabled="true">
         <intProp name="ThreadGroup.num_threads">10</intProp>
         <intProp name="ThreadGroup.ramp_time">20</intProp>
         <longProp name="ThreadGroup.duration">3600</longProp>
@@ -779,7 +777,7 @@ log.info(&quot;Balance:&quot;   +balance);</stringProp>
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-DDR">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-DDR" enabled="true">
         <intProp name="ThreadGroup.num_threads">10</intProp>
         <intProp name="ThreadGroup.ramp_time">20</intProp>
         <longProp name="ThreadGroup.duration">3600</longProp>
@@ -2003,7 +2001,7 @@ log.info(&quot;Commission: &quot; + commission);</stringProp>
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-FT">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-FT" enabled="true">
         <intProp name="ThreadGroup.num_threads">10</intProp>
         <intProp name="ThreadGroup.ramp_time">20</intProp>
         <longProp name="ThreadGroup.duration">3600</longProp>
@@ -3689,7 +3687,7 @@ if (bal.toDouble() &gt; 0)
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-DS">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-DS" enabled="true">
         <intProp name="ThreadGroup.num_threads">10</intProp>
         <intProp name="ThreadGroup.ramp_time">20</intProp>
         <longProp name="ThreadGroup.duration">3600</longProp>
@@ -4649,7 +4647,7 @@ log.info(&quot;Running for account: ${acc}, period: ${startDate} to ${endDate}&q
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-PL">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-PL" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <longProp name="ThreadGroup.duration">3600</longProp>
@@ -6767,7 +6765,7 @@ vars.put(&quot;C_NewRandState&quot;, randomState)  // store for samplers
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-VC">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group-VC" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
@@ -9310,30 +9308,6 @@ vars.put(&quot;C_NewRandcity&quot;, randomcity)  // store for samplers
         </objProp>
         <stringProp name="filename">C:\Users\SIDDARDHA\OneDrive\Desktop\jmeter\JTLFILES\mixedrun1.jtl</stringProp>
       </ResultCollector>
-      <hashTree/>
-      <com.github.johrstrom.config.PrometheusMetricsConfig guiclass="com.github.johrstrom.config.gui.PrometheusMetricsConfigGui" testclass="com.github.johrstrom.config.PrometheusMetricsConfig" testname="Prometheus Metrics" enabled="true">
-        <collectionProp name="prometheus.collector_definitions">
-          <elementProp name="" elementType="com.github.johrstrom.collector.BaseCollectorConfig">
-            <stringProp name="collector.help">default help string</stringProp>
-            <stringProp name="collector.metric_name">jmeter_25%load</stringProp>
-            <stringProp name="collector.type">COUNTER</stringProp>
-            <collectionProp name="collector.labels"/>
-            <stringProp name="collector.quantiles_or_buckets">0.75,0.5|0.95,0.1|0.99,0.01</stringProp>
-          </elementProp>
-        </collectionProp>
-      </com.github.johrstrom.config.PrometheusMetricsConfig>
-      <hashTree/>
-      <com.github.johrstrom.listener.PrometheusListener guiclass="com.github.johrstrom.listener.gui.PrometheusListenerGui" testclass="com.github.johrstrom.listener.PrometheusListener" testname="Prometheus Listener" enabled="true">
-        <collectionProp name="prometheus.collector_definitions">
-          <elementProp name="" elementType="com.github.johrstrom.listener.ListenerCollectorConfig">
-            <stringProp name="collector.help">default help string</stringProp>
-            <stringProp name="collector.metric_name">jmeter_25%_Loadtest</stringProp>
-            <stringProp name="collector.type">COUNTER</stringProp>
-            <collectionProp name="collector.labels"/>
-            <stringProp name="collector.quantiles_or_buckets">0.75,0.5|0.95,0.1|0.99,0.01</stringProp>
-          </elementProp>
-        </collectionProp>
-      </com.github.johrstrom.listener.PrometheusListener>
       <hashTree/>
     </hashTree>
   </hashTree>
